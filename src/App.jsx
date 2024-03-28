@@ -1,10 +1,12 @@
-function App() {
+import CardTrilha from "./assets/components/CardTrilha/CardTrilha";
 
+function App() {
   return (
     <div>
-      <p>Limpo!</p>
+      <p>CardTrilha criado</p>
+      <CardTrilha />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
