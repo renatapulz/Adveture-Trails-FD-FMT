@@ -1,0 +1,59 @@
+.card_container {
+    display: flex;
+    height: 15em;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding-right: 20px;
+}
+
+.container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.img_card {
+    width: 250px;
+    background-position: center;
+    margin-right: 15px;
+}
+
+.titulo-card {
+    display: flex;
+}
+
+.like {
+    cursor: pointer;
+    color: inherit;
+    margin-left: 15px;  
+}
+
+p {
+    margin: 5px 0px;
+}
+
+.autor {
+    font-weight: 700;
+    color: #0d1a26;
+    text-align: right;
+}
+
+.infosAdicionais {
+    font-weight: 400;
+    color: #5C6670;
+}
+
+.etiqueta {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #EFF0F0;
+    color: #0D1A26;
+    border-radius: 32px;
+    font-weight: 600;
+    font-size: 12px;
+    gap: 10px;
+    width: 70px;
+    height: 24px;
+    margin-bottom: 5px;
+}
