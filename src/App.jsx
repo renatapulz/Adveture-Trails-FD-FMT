@@ -1,4 +1,5 @@
 import CardTrilha from "./assets/components/CardTrilha/CardTrilha";
+import Cabecalho from "./assets/components/header";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="container">
+      <Cabecalho />
       <h1 className="titulo">Explore Trilhas Incríveis</h1>
       {listaTrilhas.map((trilha, index) => (
         <CardTrilha dadosTrilha={trilha} key={index} />
