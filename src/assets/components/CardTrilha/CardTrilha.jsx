@@ -20,11 +20,11 @@ function CardTrilha({ dadosTrilha }) {
         </div>
         <div>
           <div className='etiqueta'>{dadosTrilha.dificuldade}</div>
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarIcon />
-          <StarBorderOutlinedIcon />
+          <StarIcon className='starActive'/>
+          <StarIcon className='starActive'/>
+          <StarIcon className='starActive'/>
+          <StarIcon className='starActive'/>
+          <StarBorderOutlinedIcon className='starDisable'/>
         </div>
       </div>
     </div>
