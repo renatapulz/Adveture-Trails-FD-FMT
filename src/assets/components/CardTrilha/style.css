@@ -4,10 +4,12 @@
     box-shadow: 0px 4px 4px 0px #00000040;
     padding-right: 20px;
     margin-bottom: 20px;
+    width: 960px;
 }
 
 .container-text {
     display: flex;
+    width: 70%;
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -16,10 +18,17 @@
     width: 250px;
     background-position: center;
     margin-right: 15px;
+    width: 30%;
 }
 
 .titulo-card {
     display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.titulo-card h3 {
+    font-size: 20px;
 }
 
 .like {
@@ -41,6 +50,14 @@ p {
 .infosAdicionais {
     font-weight: 400;
     color: #5C6670;
+}
+
+.starActive {
+    color: #950495;
+}
+
+.starDisable {
+    color: #EFF0F0;
 }
 
 .etiqueta {
