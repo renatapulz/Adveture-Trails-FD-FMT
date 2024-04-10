@@ -1,12 +1,4 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: center;
-}
-
-.titulo {
-    margin: 1em auto;
-    font-size: 48px;
-    color: #504908;
+    max-width: 1366px;
+    margin: 0 auto;
 }

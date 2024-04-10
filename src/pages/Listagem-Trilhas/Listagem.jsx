@@ -32,7 +32,7 @@ function Listagem () {
     if(error) return "Erro ao carregar as informações!";
 
     return (
-        <div className="container">
+        <div className="container-listagem">
         <h1 className="titulo">Explore Trilhas Incríveis</h1>
         {data !== null && data.map((trilha, index) => (
           <CardTrilha dadosTrilha={trilha} key={index} />

@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-size: 16px;
+}
+
+.container-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-image {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-principal {
+    height: auto;
+    max-width: 100%;
+    filter: brightness(0.24);
+}
+
+.text-image h1 {
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.text-image p {
+    color: #FFFFFF;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+}
+
+.buttom-home {
+    background-color: #504908;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 8px, 16px;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 24px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #000000;
+    font-size: 10px;
+    width: 100px;
+    margin: 5px;
+}
+
+.buttom-register {
+    width: 120px;
+    margin: 20px 0px;
+}
+
+.content {
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px;
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    color: #000000;
+}
+
+.content p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: #000000CC;
+    margin: 20px 0;
+}
+
+.image-section {
+    max-width: 350px;
+    max-height: auto;
+}
+
+@media screen and (max-width: 576px) {
+    .text-image h1 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .text-image p {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .content {
+        text-align: center;
+    }  
+}
+
+@media screen and (min-width: 577px) and (max-width: 650px) {
+    .text-image h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .text-image p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .buttom-home {
+        font-size: 12px;
+    }
+    .buttom-register {
+        width: 150px;
+    }
+    .image-section {
+        max-width: 450px;
+        height: auto;
+    }
+    .content {
+        text-align: center;
+    }
+    .conteudo-secao-2 {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 30px 40px 0px;
+    }
+
+}
+
+@media screen and (min-width: 651px) and (max-width: 850px) {
+    .text-image h1 {
+        font-size: 24px;
+    }
+    .text-image p {
+        font-size: 16px;
+    }
+    .content {
+        text-align: center;
+    }
+    .split-section {
+        display: flex;
+        justify-content: space-between;
+    }  
+    .content h1 {
+        font-size: 26px;
+    }
+    .content p {
+        font-size: 18px;
+    }
+    .buttom-home {
+        width: 151px;
+        font-size: 14px;
+    }
+    .buttom-register {
+        width: 197px;
+        margin-right: 15px;
+    }
+    .image-section {
+        max-width: 380px;
+        height: auto;
+    }
+    .conteudo-secao-2 h1 {
+        margin-right: 10px;
+    }
+}
+@media screen and (min-width: 851px) and (max-width: 1080px) {
+    .text-image h1 {
+        font-size: 34px;
+    }
+    .text-image p {
+        font-size: 18px;
+    }
+    .content {
+        text-align: center;
+    }
+    .buttom-home {
+        width: 151px;
+        font-size: 16px;
+        margin: 10px;
+    }
+    .buttom-register {
+        width: 197px;
+        margin: 30px 10px 0px 0px;
+    }
+    .split-section {
+        display: flex;
+        justify-content: space-between;
+    }  
+    .content h1 {
+        font-size: 32px;
+    }
+    .content p {
+        font-size: 20px;
+    }
+    .image-section {
+        max-width: 450px;
+        height: auto;
+    }
+    .conteudo-secao-2 h1 {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .text-image h1 {
+        font-size: 40px;
+    }
+    .text-image p {
+        font-size: 20px;
+    }
+    .buttom-home {
+        width: 151px;
+        font-size: 16px;
+        margin: 10px;
+    }
+    .buttom-register {
+        width: 197px;
+        margin: 30px 10px 0px 0px;
+    }
+    .split-section {
+        display: flex;
+        justify-content: space-between;
+    }  
+    .content h1 {
+        font-size: 48px;
+    }
+    .content {
+        text-align: center;
+        padding: 20px 0px;
+    }
+    .content p {
+        font-size: 20px;
+    }
+    .image-section {
+        max-width: 617.14px;
+        height: 330px;
+        margin-right: 50px;
+    }
+    .conteudo-secao-2 h1 {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+}
