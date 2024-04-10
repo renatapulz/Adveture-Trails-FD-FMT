@@ -9,3 +9,15 @@
     font-size: 48px;
     color: #504908;
 }
+
+@media screen and (max-width: 650px) {
+    .titulo {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 651px) and (max-width: 850px) {
+    .titulo {
+        font-size: 32px;
+    }
+}
