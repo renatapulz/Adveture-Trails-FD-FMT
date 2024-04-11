@@ -2,15 +2,16 @@ import NavBar from "./assets/components/header";
 import "./App.css";
 import {Outlet} from "react-router-dom"
 import Footer from "./assets/components/footer";
+import {TrilhasContextProvider} from "./context/TrilhasContext";
 
 function App() {
 
   return (
-    <div className="container">
+    <TrilhasContextProvider className="container">
       <NavBar />
       <Outlet />
       <Footer />
-    </div>
+    </TrilhasContextProvider>
   );
 }
 
