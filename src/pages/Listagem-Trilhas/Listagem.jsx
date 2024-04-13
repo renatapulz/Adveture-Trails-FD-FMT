@@ -1,5 +1,5 @@
 import CardTrilha from "../../assets/components/CardTrilha/CardTrilha.jsx";
-import {TrilhasContext} from "../../context/TrilhasContext.jsx"
+import {TrilhasContext} from "../../hooks/TrilhasContext.jsx"
 import { useContext } from "react";
 import "./style.css";
 
