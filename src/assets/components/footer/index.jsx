@@ -8,7 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 function Footer() {
     return (
         <footer>
-            <div className="logo-footer"><Link to="/" className="link-menu">Adventure Trails FD</Link></div>
+            <div><Link to="/" className="link-menu">Adventure Trails FD</Link></div>
             <div>
                 <a href="#">
                     <GitHubIcon className='links-redes-sociais' />
