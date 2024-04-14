@@ -24,7 +24,28 @@ export const useApi = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+    }, []);
 
-  return { data, loading, error };
+    const sendToApi = async (formData) => {
+      try {
+        const response = await fetch("http://localhost:3000/cadastro", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro ao enviar dados para a API");
+        }
+        window.location.reload();
+        console.log("Dados enviados com sucesso para a API.");
+      } catch (error) {
+        console.error("Erro ao enviar dados para a API:", error);
+      }
+    };
+
+
+  return { data, loading, error, sendToApi };
 };

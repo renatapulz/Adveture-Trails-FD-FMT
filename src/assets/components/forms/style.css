@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+form {
+    max-width: 630px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+.input-forms {
+    width: 100%;
+    border: 1px solid #AEB3B7;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.input-forms:focus {
+    border-color: black;
+    outline: none;
+}
+
+.error-message {
+    color: red;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.botao-cadastro {
+    background-color: #504908;
+    width: 110px;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    padding: 8px 16px;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin: 20px 20px 20px 0;
+}
+
+.botao-retornar {
+    border: 2px solid #504908;
+    border-radius: 4px;
+    width: 80px;
+    color: #504908;
+    font-weight: 700;
+    padding: 8px 16px;
+    background-color: transparent;
+}
