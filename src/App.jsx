@@ -7,7 +7,7 @@ import {TrilhasContextProvider} from "./hooks/TrilhasContext";
 function App() {
 
   return (
-    <TrilhasContextProvider className="container">
+    <TrilhasContextProvider>
       <NavBar />
       <Outlet />
       <Footer />

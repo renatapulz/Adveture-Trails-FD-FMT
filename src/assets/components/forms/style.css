@@ -17,6 +17,7 @@ form {
 label {
     display: block;
     text-align: left;
+    padding: 10px;
 }
 
 .input-forms {
@@ -66,7 +67,6 @@ label {
 
 .espaco-dividido > div {
     flex: 1;
-    margin-right: 10px;
 }
 
 .espaco-dividido > div:last-child {
@@ -76,6 +76,5 @@ label {
 @media screen and (max-width: 576px) {
     .espaco-dividido {
         display: inline;
-        margin: 10px 0;
     }
 }

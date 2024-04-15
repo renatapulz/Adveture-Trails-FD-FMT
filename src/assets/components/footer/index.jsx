@@ -7,20 +7,24 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Footer() {
     return (
-        <footer>
-            <div><Link to="/" className="link-menu">Adventure Trails FD</Link></div>
-            <div>
-                <a href="#">
-                    <GitHubIcon className='links-redes-sociais' />
-                </a>
-                <a href="#">
-                    <LinkedInIcon className='links-redes-sociais' />
-                </a>
-                <a href="#">
-                    <InstagramIcon className='links-redes-sociais' />
-                </a>
+        <div className="background-footer">
+            <div className="container">
+                <footer>
+                    <div><Link to="/" className="link-menu">Adventure Trails FD</Link></div>
+                    <div>
+                        <a href="#">
+                            <GitHubIcon className='links-redes-sociais' />
+                        </a>
+                        <a href="#">
+                            <LinkedInIcon className='links-redes-sociais' />
+                        </a>
+                        <a href="#">
+                            <InstagramIcon className='links-redes-sociais' />
+                        </a>
+                    </div>
+                </footer>
             </div>
-        </footer>
+        </div>
     )
 }
 
