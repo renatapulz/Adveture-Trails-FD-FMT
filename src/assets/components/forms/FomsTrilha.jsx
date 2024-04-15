@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import {useApi} from "../../../hooks/useApi";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const FormTrilha = () => {
@@ -21,7 +22,7 @@ const FormTrilha = () => {
                         {...register("nomeTrilha", {required: true})}></input>
                         {errors?.nomeTrilha && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
                 </div>
-                <div>
+                <div className="espaco-dividido">
                     <div>
                         <label>Duração estimada (min)</label>
                         <input type="number" className="input-forms"
@@ -37,7 +38,7 @@ const FormTrilha = () => {
                             {errors?.trajeto && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
                     </div>
                 </div>
-                <div>
+                <div className="espaco-dividido">
                     <div>
                         <label>Cidade</label>
                         <input type="text" className="input-forms"
@@ -83,7 +84,7 @@ const FormTrilha = () => {
                         {errors?.estado && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
                     </div>
                 </div>
-                <div>
+                <div className="espaco-dividido">
                     <div>
                         <label>Nome completo do usuário</label>
                         <input type="text" className="input-forms"
@@ -127,7 +128,7 @@ const FormTrilha = () => {
                 </div>
                 <div>
                     <button className="botao-cadastro" type="submit">Cadastrar</button>
-                    <button className="botao-retornar">Voltar</button>
+                    <Link to="/"><button className="botao-retornar">Voltar</button></Link>
                 </div>
             </form>
         </div>

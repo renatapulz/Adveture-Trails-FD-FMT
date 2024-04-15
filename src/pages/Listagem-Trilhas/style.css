@@ -1,3 +1,11 @@
+.image-tela-lista-trilha {
+    height: 371px;
+    width: 100%;
+    filter: brightness(0.24);
+    object-fit: cover;
+    object-position: center center;
+}
+
 .container-listagem {
     display: flex;
     flex-direction: column;
@@ -10,14 +18,20 @@
     color: #504908;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 570px) {
     .titulo {
         font-size: 26px;
     }
+    .image-tela-lista-trilha {
+        height: 150px;
+    }
 }
 
-@media screen and (min-width: 651px) and (max-width: 850px) {
+@media screen and (min-width: 571px) and (max-width: 850px) {
     .titulo {
-        font-size: 32px;
+        font-size: 30px;
+    }
+    .image-tela-lista-trilha {
+        height: 220px;
     }
 }
