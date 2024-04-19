@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import {useApi} from "../../../hooks/useApi";
+import { useApi } from "../../../hooks/useApi";
 import { Link } from "react-router-dom";
 import "./style.css";
 
@@ -9,7 +9,7 @@ const FormTrilha = () => {
 
     const onSubmit = async (data) => {
         await sendToApi(data);
-    };    
+    };
 
     return (
         <div>
@@ -19,23 +19,31 @@ const FormTrilha = () => {
                     <input type="text"
                         className="input-forms"
                         placeholder="Digite o nome da trilha"
-                        {...register("nomeTrilha", {required: true})}></input>
-                        {errors?.nomeTrilha && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                        {...register("nomeTrilha", { required: true, maxLength: 100 })}></input>
+                    {errors?.nomeTrilha && errors.nomeTrilha.type === "required" && isSubmitted && <p className="error-message">O campo não pode estar vazio.</p>}
+                    {errors?.nomeTrilha && errors.nomeTrilha.type === "maxLength" && isSubmitted && <p className="error-message">O nome da trilha não pode ter mais de 100 caracteres.</p>}
                 </div>
                 <div className="espaco-dividido">
                     <div>
                         <label>Duração estimada (min)</label>
                         <input type="number" className="input-forms"
                             placeholder="Digite a duração em minutos"
-                            {...register("duracao", {required: true, setValueAs: (value) => parseInt(value)})}></input>
-                            {errors?.duracao && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                            {...register("duracao", { required: true, min: 1, max: 999, setValueAs: (value) => parseInt(value) })}></input>
+                        {errors?.duracao && errors.duracao.type === "required" && isSubmitted && (<p className="error-message">O campo não pode estar vazio.</p>)}
+                        {errors?.duracao && errors.duracao.type === "notZero" && isSubmitted && (<p className="error-message">A duração não pode ser zero.</p>)}
+                        {errors?.duracao && errors.duracao.type === "min" && isSubmitted && (<p className="error-message">A duração deve ser maior que zero.</p>)}
+                        {errors?.duracao && errors.duracao.type === "max" && isSubmitted && (<p className="error-message">A duração deve ter até 3 caracteres.</p>)}
                     </div>
                     <div>
                         <label>Trajeto (km)</label>
                         <input type="number" className="input-forms"
+                            step={0.1}
                             placeholder="Digite a distância em km"
-                            {...register("trajeto", {required: true, setValueAs: (value) => parseInt(value)})}></input>
-                            {errors?.trajeto && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                            {...register("trajeto", { required: true, min: 1, max: 999999, setValueAs: (value) => parseInt(value) })}></input>
+                        {errors?.trajeto && errors.trajeto.type === "required" && isSubmitted && (<p className="error-message">O campo não pode estar vazio.</p>)}
+                        {errors?.trajeto && errors.trajeto.type === "notZero" && isSubmitted && (<p className="error-message">O trajeto não pode ser zero.</p>)}
+                        {errors?.trajeto && errors.trajeto.type === "min" && isSubmitted && (<p className="error-message">O trajeto deve ser maior que zero.</p>)}
+                        {errors?.trajeto && errors.trajeto.type === "max" && isSubmitted && (<p className="error-message">O trajeto deve ter até 6 caracteres.</p>)}
                     </div>
                 </div>
                 <div className="espaco-dividido">
@@ -43,15 +51,14 @@ const FormTrilha = () => {
                         <label>Cidade</label>
                         <input type="text" className="input-forms"
                             placeholder="Digite o nome da cidade"
-                            {...register("cidade", {required: true})}></input>
-                            {errors?.cidade && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                            {...register("cidade", { required: true, maxLength: 60 })}></input>
+                        {errors?.cidade && errors.cidade.type === "required" && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                        {errors?.cidade && errors.cidade.type === "maxLength" && isSubmitted && <p className="error-message">Cidade não pode ter mais de 60 caracteres.</p>}
                     </div>
                     <div>
                         <label>Estado</label>
                         <select className="input-forms"
-                            {...register("estado", {validate: (value) => {
-                                return value !== "0"
-                            }})}>
+                            {...register("estado", {validate: (value) => {return value !== "0"}})}>
                             <option value="0">Selecione</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -86,18 +93,16 @@ const FormTrilha = () => {
                 </div>
                 <div className="espaco-dividido">
                     <div>
-                        <label>Nome completo do usuário</label>
+                        <label>Nome completo do usuário*</label>
                         <input type="text" className="input-forms"
                             placeholder="Seu nome completo"
-                            {...register("nomeUsuario", {required: true})}></input>
-                            {errors?.nomeUsuario && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                            {...register("nomeUsuario", { maxLength: 60 })}></input>
+                        {errors?.nomeUsuario && errors.nomeUsuario.type === "maxLength" && isSubmitted && <p className="error-message">O nome do usuário não pode ter mais de 60 caracteres.</p>}
                     </div>
                     <div>
                         <label>Dificuldade</label>
                         <select className="input-forms"
-                            {...register("dificuldade", {validate: (value) => {
-                                return value !== "0"
-                            }})}>
+                            {...register("dificuldade", {validate: (value) => {return value !== "0"}})}>
                             <option value="0">Selecione</option>
                             <option value="Iniciante">Iniciante</option>
                             <option value="Intermediario">Intermediário</option>
@@ -109,9 +114,7 @@ const FormTrilha = () => {
                 <div>
                     <label>Tipo</label>
                     <select name="Trilha" className="input-forms"
-                        {...register("tipo", {validate: (value) => {
-                            return value !== "0"
-                        }})}>
+                        {...register("tipo", {validate: (value) => {return value !== "0"}})}>
                         <option value="0">Selecione</option>
                         <option value="Trilha">Trilha</option>
                         <option value="Caminhada">Caminhada</option>
@@ -123,8 +126,9 @@ const FormTrilha = () => {
                     <label>URL imagem da trilha</label>
                     <input type="text" className="input-forms"
                         placeholder="Insira um link de uma imagem da trilha"
-                        {...register("UrlImage", {required: true})}></input>
-                        {errors?.UrlImage && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                        {...register("UrlImage", { required: true, maxLength: 300 })}></input>
+                    {errors?.UrlImage && errors.UrlImage.type === "required" && isSubmitted && <p className="error-message">O campo não pode estar vazio</p>}
+                    {errors?.UrlImage && errors.UrlImage.type === "maxLength" && isSubmitted && <p className="error-message">A URL não pode ter mais de 300 caracteres.</p>}
                 </div>
                 <div>
                     <button className="botao-cadastro" type="submit">Cadastrar</button>

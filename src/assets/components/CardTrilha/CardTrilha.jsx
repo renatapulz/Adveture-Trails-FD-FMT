@@ -13,7 +13,7 @@ function CardTrilha({ dadosTrilha }) {
           <h3>{dadosTrilha.nomeTrilha} - {dadosTrilha.cidade} / {dadosTrilha.estado}</h3>
           <FavoriteBorderIcon className='like' />
         </div>
-        <p className='autor'>Por: {dadosTrilha.nomeUsuario}</p>
+        {dadosTrilha.nomeUsuario && (<p className='autor'>Por: {dadosTrilha.nomeUsuario}</p>)}
         <div className='infosAdicionais'>
           <p>Duração: {dadosTrilha.duracao} min</p>
           <p>Trajeto: {dadosTrilha.trajeto} km</p>
@@ -40,7 +40,7 @@ CardTrilha.propTypes = {
     trajeto: PropTypes.number.isRequired,
     dificuldade: PropTypes.string.isRequired,
     tipo: PropTypes.string.isRequired,
-    nomeUsuario: PropTypes.string.isRequired,
+    nomeUsuario: PropTypes.string,
     UrlImage: PropTypes.string.isRequired,
   })
 };
