@@ -2,6 +2,7 @@ import CardTrilha from "../../assets/components/CardTrilha/CardTrilha.jsx";
 import { TrilhasContext } from "../../hooks/TrilhasContext.jsx"
 import { useContext } from "react";
 import "./style.css";
+import ImagemListagem from "./../../assets/images/img-listagem.jpg";
 
 function Listagem() {
 
@@ -12,7 +13,7 @@ function Listagem() {
 
   return (
     <div>
-      <img className="image-tela-lista-trilha" src="/src/assets/images/img-listagem.jpg"></img>
+      <img className="image-tela-lista-trilha" src={ImagemListagem} />
       <div className="container">
         <div className="container-listagem">
           <h1 className="titulo">Explore Trilhas Incríveis</h1>
