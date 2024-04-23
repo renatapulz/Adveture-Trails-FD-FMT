@@ -2,22 +2,18 @@ import { useForm } from "react-hook-form";
 import { useApi } from "../../../hooks/useApi";
 import { Link } from "react-router-dom";
 import "./style.css";
-import { useState } from "react";
 
 const FormTrilha = () => {
     const { register, handleSubmit, formState: { errors, isSubmitted } } = useForm();
     const { sendToApi } = useApi();
-    const [formEnviado, setFormEnviado] = useState(false);
 
     const onSubmit = async (data) => {
         await sendToApi(data);
-        setFormEnviado(true);
     };
 
     return (
         <div>
-            {!formEnviado ? (
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label>Nome da trilha</label>
                     <input type="text"
@@ -138,12 +134,9 @@ const FormTrilha = () => {
                     <button className="botao-cadastro" type="submit">Cadastrar</button>
                     <Link to="/"><button className="botao-retornar">Voltar</button></Link>
                 </div>
-                </form>
-            ) : (
-                <div>Formulário enviado com sucesso!</div>
-            )}
+            </form>
         </div>
-    );
+    )
 }
 
 export default FormTrilha;
