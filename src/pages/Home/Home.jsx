@@ -5,7 +5,7 @@ function Home() {
     return (
         <div>
             <div className="container-image">
-                    <img className="image-principal" src="\src\assets\images\img-home.jpg"></img>
+                    <img className="image-principal" src="/src/assets/images/img-home.jpg"></img>
                     <div className="text-image">
                         <h1>Que tal aproveitar um tempo <br />com a natureza?</h1>
                         <p>Junte-se à comunidade de entusiastas ao ar livre, compartilhe suas aventuras e inspire-se com as experiências de outros aventureiros. Prepare-se para explorar novos horizontes e se conectar com a natureza através do Adventure Trails!</p>
@@ -26,7 +26,7 @@ function Home() {
                         <h1>Compartilhe fotos,<br />dicas e localização das<br />suas trilhas favoritas</h1>
                         <Link to="/cadastro-trilhas"><button className="buttom-home buttom-register">Cadastrar nova trilha</button></Link>
                     </div>
-                    <img className="image-section" src="\src\assets\images\img-section.jpg"></img>
+                    <img className="image-section" src="/src/assets/images/img-section.jpg"></img>
                 </section>
             </div>
         </div>

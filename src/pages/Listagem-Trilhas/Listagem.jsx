@@ -12,7 +12,7 @@ function Listagem() {
 
   return (
     <div>
-      <img className="image-tela-lista-trilha" src="\src\assets\images\img-listagem.jpg"></img>
+      <img className="image-tela-lista-trilha" src="/src/assets/images/img-listagem.jpg"></img>
       <div className="container">
         <div className="container-listagem">
           <h1 className="titulo">Explore Trilhas Incríveis</h1>
