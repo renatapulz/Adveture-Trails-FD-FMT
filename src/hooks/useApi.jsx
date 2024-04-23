@@ -6,7 +6,7 @@ export const useApi = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/trilhas")
+    fetch(`${import.meta.env.VITE_API_HOST}/trilhas`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -28,7 +28,7 @@ export const useApi = () => {
 
     const sendToApi = async (formData) => {
       try {
-        const response = await fetch("http://localhost:3000/cadastro", {
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/cadastro`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
