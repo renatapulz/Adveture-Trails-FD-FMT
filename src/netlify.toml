@@ -1,5 +1,4 @@
-[[redirects]]
-  force = true
-  from = "/api"
-  status = 200
-  to = "https://trilhas-api.netlify.app/api/trilhas"
+[[headers]]
+  for = "/*" # you can configure the correct paths here
+  [headers.values]
+    access-control-allow-origin = "*"
