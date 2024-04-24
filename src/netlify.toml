@@ -2,3 +2,6 @@
   for = "/*" # you can configure the correct paths here
   [headers.values]
     access-control-allow-origin = "*"
+
+[build]
+  functions = "netlify/functions"
