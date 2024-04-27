@@ -18,15 +18,14 @@ const routers = createBrowserRouter([
             {
                 path: "/cadastro-trilhas",
                 element: <Cadastro />,
-                
-            },    
+
+            },
             {
                 path: "/lista-trilhas",
                 element: <Listagem />
             }
         ]
     }
-    ])
+])
 
-    export default routers;
-
+export default routers;
