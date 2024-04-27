@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 export const useApi = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_HOST}/trilhas`)
@@ -25,30 +26,28 @@ export const useApi = () => {
       .finally(() => {
         setLoading(false);
       });
-    }, []);
+  }, []);
 
-    const sendToApi = async (formData) => {
-      const navigate = useNavigate()
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_HOST}/cadastro`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        });
+  const sendToApi = async (formData) => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_HOST}/cadastro`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
-        if (!response.ok) {
-          throw new Error("Erro ao enviar dados para a API");
-        }
-        navigate('/lista-trilhas')
-        console.log("Dados enviados com sucesso para a API.");
+      if (!response.ok) {
+        throw new Error("Erro ao enviar dados para a API");
       }
-      catch (error) {
-        console.error("Erro ao enviar dados para a API:", error);
-      }
-    };
-
+      navigate('/lista-trilhas');
+      console.log("Dados enviados com sucesso para a API.");
+    }
+    catch (error) {
+      console.error("Erro ao enviar dados para a API:", error);
+    }
+  };
 
   return { data, loading, error, sendToApi };
 };
