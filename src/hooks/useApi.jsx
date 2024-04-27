@@ -42,6 +42,7 @@ export const useApi = () => {
         throw new Error("Erro ao enviar dados para a API");
       }
       navigate('/lista-trilhas');
+      navigate(0);
       console.log("Dados enviados com sucesso para a API.");
     }
     catch (error) {
